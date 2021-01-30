@@ -100,6 +100,13 @@ public class CloudCalculatorTest {
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='select_option_97']")));
         cloudCalculator.commitUsageSelect();
 
+
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@name='ComputeEngineForm']//*[@aria-label='Add to Estimate']")));
+        cloudCalculator.estimateButtonClick();
+
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='resultBlock']")));
+
+
         Thread.sleep(5000);
     }
 

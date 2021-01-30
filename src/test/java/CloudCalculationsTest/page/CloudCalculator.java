@@ -76,6 +76,10 @@ public class CloudCalculator {
         @FindBy (xpath = "//*[@id='select_option_97']")
         WebElement commitUsageOption;
 
+        @FindBy (xpath = "//form[@name='ComputeEngineForm']//*[@aria-label='Add to Estimate']")
+        WebElement estimateButton;
+
+
         public void computerEngineSelect () {computerEngineLabel.click();}
         public void numberOfInstancesClick() {numberOfInstancesField.click();}
         public void numberOfInstancesInput (String value) {numberOfInstancesField.sendKeys(value);}
@@ -98,6 +102,7 @@ public class CloudCalculator {
         public void datacenterSelect () {datacenterOption.click();}
         public void commitUsageClick() {commitUsageLabel.click();}
         public void commitUsageSelect () {commitUsageOption.click();}
+        public void estimateButtonClick () {estimateButton.click();}
 
 
 
