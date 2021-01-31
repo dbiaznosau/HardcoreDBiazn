@@ -156,7 +156,12 @@ public class CloudCalculatorTest {
         String priceEmailed = emailDriver.findElement(By.xpath("//*[@id='mobilepadding']//h3[contains (., 'USD')]")).getText();
         boolean compareResults = priceDisplayed.indexOf(priceEmailed) !=1;
 
+        //added sout to check what information is compared
+        System.out.println("Price in calculator is " + priceDisplayed);
+        System.out.println("Price in email is " + priceEmailed);
+
         Assert.assertTrue("Prices are different!", compareResults);
+
     }
 
     @AfterClass

@@ -1,5 +1,6 @@
 # HardcoreDBiazn
-This is completed task for WebDriver module in the Functional Testing Mentoring program (Advanced)
+This is completed task for WebDriver module in the Functional Testing Mentoring program (Advanced).
+
 Difficulty - Hardcore.
 
 Please, see the requiremets:
