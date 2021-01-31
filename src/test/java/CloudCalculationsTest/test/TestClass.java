@@ -14,12 +14,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestClass {
     public static WebDriver driver;
+    public static WebDriver driver2;
 
     @BeforeClass
     public static void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://cloud.google.com/products/calculator");}
+        driver.get("https://cloud.google.com/products/calculator");
+        driver2 = new ChromeDriver();
+        driver2.manage().window().maximize();
+        driver2.get("https://10minutemail.com");}
+
 
         @Test
         public void TestClass () {
@@ -47,6 +52,11 @@ public class TestClass {
             cloudCalculator.numberOfGpuClick();
             new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='select_option_399']")));
             cloudCalculator.numberOfGpuSelect();
+
+            String mainTabName = driver.getWindowHandle();
+            String emailTab = driver2.getWindowHandle();
+            System.out.println(mainTabName);
+            System.out.println(emailTab);
 
 
         }

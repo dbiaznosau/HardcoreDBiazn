@@ -79,6 +79,14 @@ public class CloudCalculator {
         @FindBy (xpath = "//form[@name='ComputeEngineForm']//*[@aria-label='Add to Estimate']")
         WebElement estimateButton;
 
+        @FindBy (xpath = "//button[@id='email_quote']")
+        WebElement emailEstimateButton;
+
+        @FindBy (xpath = "//input[@id='input_477']")
+        WebElement sendEmailField;
+
+        @FindBy (xpath = "//button[contains (.,'Send Email')]")
+        WebElement sendEmailButton;
 
         public void computerEngineSelect () {computerEngineLabel.click();}
         public void numberOfInstancesClick() {numberOfInstancesField.click();}
@@ -103,6 +111,9 @@ public class CloudCalculator {
         public void commitUsageClick() {commitUsageLabel.click();}
         public void commitUsageSelect () {commitUsageOption.click();}
         public void estimateButtonClick () {estimateButton.click();}
+        public void emailEstimateButtonClick () {emailEstimateButton.click();}
+        public void sendEmailFieldInput (String email) {sendEmailField.sendKeys(email);}
+        public void sendEmailButtonClick () {sendEmailButton.click();}
 
 
 

@@ -3,28 +3,45 @@ package CloudCalculationsTest.test;
 import CloudCalculationsTest.page.CloudCalculator;
 import CloudCalculationsTest.page.CloudLandingPage;
 import CloudCalculationsTest.page.CloudSearchResults;
+import CloudCalculationsTest.page.EmailPage;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class CloudCalculatorTest {
 
     public static WebDriver driver;
+   // public static WebDriver driver2;
 
     @BeforeClass
-    public static void setup () {
+    public static void calculatorPageWindow() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(ConfProperties.getProperty("cloudPage"));
-    }
+        String calculatorWindow = driver.getWindowHandle();
+        }
+
+    @BeforeClass
+    public static void emailPageWindow() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(ConfProperties.getProperty("emailServicePage"));
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        String emailWindow = driver.getWindowHandle();
+        }
 
     @Test
     public void cloudCalculatorTest() throws InterruptedException {
+        driver.switchTo().window("calculatorWindow");
+
         //landing page for Google Cloud
         new WebDriverWait(driver, 10).
                 until(ExpectedConditions.presenceOfElementLocated(By.name("q")));
@@ -106,8 +123,32 @@ public class CloudCalculatorTest {
 
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='resultBlock']")));
 
+        /*
+        get and store calculated price
+        */
 
-        Thread.sleep(5000);
+        cloudCalculator.emailEstimateButtonClick();
+
+        //check that email form is opened
+
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@name='emailForm']")));
+
+        driver.switchTo().window("emailWindow");
+        //create new emailPage element to call procedures
+        EmailPage emailPage = new EmailPage(driver);
+        //click Copy Email button
+        emailPage.copyAddressButtonClick();
+
+        driver.switchTo().window("calculatorWindow");
+        //paste copied email address
+        cloudCalculator.sendEmailFieldInput(Keys.CONTROL + "v"); //get temporary email
+        //driver.findElement(By.xpath("//input[@id='input_477']")).sendKeys(Keys.CONTROL + "v");
+
+        //send email to pasted address
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains (.,'Send Email')]")));
+        cloudCalculator.sendEmailButtonClick();
+
+        Thread.sleep(5000); //remove it after
     }
 
 
