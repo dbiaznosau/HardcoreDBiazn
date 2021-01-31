@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfProperties {
+    /*
+    Reader to get some properties from external place.
+    Can be useful if the same properties are placed in the different places of the project
+     (to change initial settings instead of searching the code for all of them).
+    */
     protected static FileInputStream fileInputStream;
     protected static Properties PROPERTIES;
     static {

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CloudLandingPage {
 
     public WebDriver driver;
-
+//main page of google cloud service
     public CloudLandingPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CloudSearchResults {
     public WebDriver driver;
-
+//search results for cloud search
     public CloudSearchResults(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }

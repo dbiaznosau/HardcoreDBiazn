@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class EmailPage {
     public WebDriver driver;
-
+//page for temporary email
     public EmailPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver= driver; }

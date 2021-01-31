@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class CloudCalculatorTest {
-
+//test class
     public static WebDriver calculatorDriver;
     public static WebDriver emailDriver;
 

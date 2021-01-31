@@ -9,6 +9,7 @@ public class CloudCalculator {
 
     public WebDriver driver;
 
+    //Page with calculator firlds and resuit sum
     public CloudCalculator(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
