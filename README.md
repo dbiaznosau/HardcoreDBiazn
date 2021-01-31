@@ -1,8 +1,7 @@
 # HardcoreDBiazn
 This is completed task for WebDriver module in the Functional Testing Mentoring program (Advanced).
 
-Difficulty - Hardcore.
-
+Difficulty - Hardcore. \
 Please, see the requiremets:
 
 При выполнении задания необходимо использовать возможности Selenium WebDriver, юнит-тест фреймворка и концепцию Page Object. Автоматизировать следующий сценарий:
