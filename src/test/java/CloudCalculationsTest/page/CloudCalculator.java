@@ -115,8 +115,4 @@ public class CloudCalculator {
         public void sendEmailFieldInput (String email) {sendEmailField.sendKeys(email);}
         public void sendEmailButtonClick () {sendEmailButton.click();}
 
-
-
-
-
 }

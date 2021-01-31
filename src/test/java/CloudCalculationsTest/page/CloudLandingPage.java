@@ -20,5 +20,4 @@ public class CloudLandingPage {
     public void searchButtonPress () {searchButton.click(); }
     public void searchButtonInputText (String text) {searchButton.sendKeys(text);}
     public void searchGo () {searchButton.sendKeys(Keys.ENTER);};
-
 }

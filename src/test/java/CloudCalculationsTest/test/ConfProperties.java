@@ -9,7 +9,7 @@ public class ConfProperties {
     protected static Properties PROPERTIES;
     static {
         try{
-            fileInputStream = new FileInputStream("src/test/resources/conf.properties");
+            fileInputStream = new FileInputStream("src/test/java/CloudCalculationsTest/resources/conf.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);}
             catch (IOException e) {
@@ -20,8 +20,7 @@ public class ConfProperties {
                     try {
                         fileInputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        e.printStackTrace();}
                     }
         {
         }

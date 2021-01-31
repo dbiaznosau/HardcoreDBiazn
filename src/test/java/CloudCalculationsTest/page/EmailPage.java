@@ -12,17 +12,13 @@ public class EmailPage {
         PageFactory.initElements(driver, this);
         this.driver= driver; }
 
-        @FindBy (xpath = "//div[@id='eposta_adres']")
+        @FindBy (xpath = "//div[@id='copy_address']")
         WebElement copyAddressButton;
 
-        @FindBy (xpath = "//li[contains (., 'Google Cloud Platform Price Estimate')]")
+        @FindBy (xpath = "//div[contains (@class, 'message_top') and contains (., 'Google Cloud Platform Price Estimate')]")
         WebElement emailHeader;
-
-
 
         public void copyAddressButtonClick () {copyAddressButton.click();}
         public void emailHeaderClick(){emailHeader.click();}
-        //void getPrice (String price) {priceCalculated.getText(price);}
-
 }
 
