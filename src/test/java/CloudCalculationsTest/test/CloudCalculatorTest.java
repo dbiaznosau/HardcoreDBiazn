@@ -27,7 +27,11 @@ public class CloudCalculatorTest {
         calculatorPageWindow();
         emailPageWindow();
     }
-
+    /*
+        Here I will open two browser windows at the start of the testing process.
+        I think, in the next cases I can move call of the second window to the middle the case,
+         but his time I decided to leave it as is.
+     */
     public static void calculatorPageWindow() {
         calculatorDriver = new ChromeDriver();
         calculatorDriver.manage().window().maximize();
